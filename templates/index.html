@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桌遊推薦平台</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>桌遊推薦平台</h1>
+        <p>選擇你想要的桌遊類型，探索適合的遊戲！</p>
+    </header>
+    <main>
+        <div class="filter-container">
+            <!-- 玩家人數篩選器 -->
+            <label for="player-filter">玩家人數：</label>
+            <select id="player-filter" disabled onchange="filterGames()">
+                <option value="all">全部</option>
+                <option value="2">2 人</option>
+                <option value="3">3 人</option>
+                <option value="4">4 人</option>
+                <option value="5">5 人</option>
+                <option value="6">6 人</option>
+                <option value="7">7 人</option>
+                <option value="8">8 人以上</option>
+            </select>
+        </div>
+        <div class="category-container">
+            <!-- 類型按鈕 -->
+            <div class="category" onclick="fetchGames('party')">🎉 派對遊戲</div>
+            <div class="category" onclick="fetchGames('strategy')">♟ 策略遊戲</div>
+            <div class="category" onclick="fetchGames('camp')">🛡 陣營遊戲</div>
+        </div>
+    </main>
+    <section id="game-list">
+        <h2>遊戲列表</h2>
+        <ul id="games"></ul>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
