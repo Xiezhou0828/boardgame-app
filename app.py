@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+import os
 
 app = Flask(__name__)
 
@@ -38,5 +39,8 @@ def get_games(category):
     games = games_data.get(category, [])
     return jsonify(games)
 
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # 默認使用 5000 端口，Render 提供時使用環境變數
+    app.run(host="0.0.0.0", port=port, debug=True)
